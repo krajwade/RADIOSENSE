@@ -1,0 +1,38 @@
+{% extends 'basic.html' %}
+
+{% block content %}
+
+<h1>Sensitivity Calculator</h1>
+<form action="sensitivity" method="POST">
+    {% csrf_token %}
+
+    Gain (K/Jy): <input type="text" name="gain"><br><br>
+    Observing time (s):  <input type="text" name="tobs"><br><br>
+    Signal-to-Noise threshold:  <input type="text" name="snr"><br><br>
+    Receiver Temperature (K):  <input type="text" name="trec"><br><br>
+    Bandwidth (Hz):  <input type="text" name="bw"><br><br>
+    Central Frequency (MHz): <input type="text" name="fcen"><br><br>
+    Scattering time (s): <input type="text" name="tscatter"><br><br>
+    Galactic Contribution (0 or 1): <input type="text" name="galcon"><br><br>
+    <input type="submit">
+
+</form>
+
+<h1>Observing Time Calculator</h1>
+<form action="observtime" method="POST">
+    {% csrf_token %}
+    Gain (K/Jy): <input type="text" name="gain"><br><br>
+    Signal-to-Noise threshold:  <input type="text" name="snr"><br><br>
+    Receiver Temperature (K):  <input type="text" name="trec"><br><br>
+    Bandwidth (Hz):  <input type="text" name="bw"><br><br>
+    Central Frequency (MHz): <input type="text" name="fcen"><br><br>
+    Flux Limit (Jy): <input type="text" name="fluxlim"><br><br>
+    Scattering time (s): <input type="text" name="tscatter"><br><br>
+    Galactic Contribution (0 or 1): <input type="text" name="galcon"><br><br>
+    <input type="submit">
+
+</form>
+
+{% endblock %}
+
+
